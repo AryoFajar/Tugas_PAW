@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITERA — Institut Teknologi Sumatera</title>
+<meta name="description" content="Situs resmi tiruan Institut Teknologi Sumatera (ITERA): profil, fakultas, dan informasi akademik.">
+<style>
+  :root{
+  --paper:        #F1EFE6;
+  --paper-dim:     #E7E3D4;
+  --ink:          #16211D;
+  --ink-soft:     #4B5750;
+  --forest:       #1E4B3C;
+  --forest-deep:  #10281F;
+  --forest-mid:   #2C6350;
+  --gold:         #B8862E;
+  --gold-soft:    #E4C77C;
+  --teal:         #3E7C74;
+  --line:         #CFC9B3;
+  --white:        #FBFAF5;
+ 
+  --font-head: 'Fraunces', Georgia, serif;
+  --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+ 
+  --max: 1180px;
+}
+ 
+*, *::before, *::after{ box-sizing: border-box; }
+ 
+html{ scroll-behavior: smooth; }
+ 
+body{
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+img, svg{ max-width: 5%; display: block; }
+ 
+a{ color: inherit; text-decoration: none; }
+ 
+ul{ margin: 0; padding: 0; list-style: none; }
+ 
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+ 
+:focus-visible{
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+ 
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--font-head);
+  color: var(--forest-deep);
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 600;
+}
+ 
+h1{ font-size: clamp(2.4rem, 4.4vw, 3.6rem); font-weight: 500; }
+h2{ font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
+h3{ font-size: 1.25rem; }
+h4{ font-size: 1.05rem; letter-spacing: .01em; }
+h5{ font-size: .92rem; }
+h6{ font-size: .8rem; font-weight: 700; color: var(--ink-soft); text-transform: none; }
+ 
+p{ margin: 0 0 1em; color: var(--ink-soft); max-width: 62ch; }
+ 
+/* ---------- Header & Nav ---------- */
+.site-header{
+  background: var(--forest-deep);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+ 
+.site-header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+ 
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+}
+ 
+.logo svg{ width: 42px; height: 42px; flex-shrink: 0; }
+ 
+.logo-text{ display: flex; flex-direction: column; line-height: 1.1; }
+.logo-text strong{
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.logo-text span{ font-size: .72rem; color: var(--gold-soft); }
+ 
+.main-nav ul{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+ 
+.main-nav a{
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 4px;
+  font-size: .93rem;
+  font-weight: 500;
+  color: rgba(251,250,245,.86);
+  transition: background .15s ease, color .15s ease;
+}
+ 
+.main-nav a:hover{ background: rgba(255,255,255,.08); color: var(--white); }
+ 
+.main-nav a[aria-current="page"]{
+  color: var(--forest-deep);
+  background: var(--gold-soft);
+}
+ 
+.nav-toggle{
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 4px;
+  width: 42px;
+  height: 38px;
+  color: var(--white);
+  cursor: pointer;
+}
+ 
+/* ---------- Hero ---------- */
+.hero{
+  background: linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 100%);
+  color: var(--white);
+  overflow: hidden;
+}
+ 
+.hero .wrap{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 64px;
+}
+ 
+.hero-eyebrow{
+  color:var(--gold-soft);
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: 1.05rem;
+  margin: 0 0 10px;
+}
+ 
+.hero h1{ color: var(--white); margin-bottom: 18px; }
+ 
+.hero p.lede{
+  color: rgba(251,250,245,.82);
+  font-size: 1.08rem;
+  max-width: 46ch;
+}
+ 
+.hero-actions{ display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+ 
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: .95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+ 
+.btn-primary{ background: var(--gold); color: var(--forest-deep); }
+.btn-primary:hover{ background: var(--gold-soft); }
+ 
+.btn-ghost{ border-color: rgba(255,255,255,.4); color: var(--white); }
+.btn-ghost:hover{ border-color: var(--white); background: rgba(255,255,255,.06); }
+ 
+.hero-art{ position: relative; }
+ 
+/* ---------- Sections ---------- */
+main section{
+  padding: 76px 0;
+  border-bottom: 1px solid var(--line);
+}
+ 
+section.no-border{ border-bottom: none; }
+ 
+.section-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+ 
+.section-head .kicker{
+  font-family: var(--font-head);
+  font-style: italic;
+  color: var(--teal);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 6px;
+}
+ 
+.section-head p{ margin: 10px 0 0; }
+ 
+/* ---------- Tentang ---------- */
+.tentang-grid{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 56px;
+  align-items: start;
+}
+ 
+.tentang-list{ margin-top: 22px; display: grid; gap: 16px; }
+ 
+.tentang-list li{
+  display: flex;
+  gap: 14px;
+  padding: 4px 0;
+}
+ 
+.tentang-list .dot{
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold);
+  margin-top: 9px;
+  flex-shrink: 0;
+}
+ 
+.tentang-list strong{ display: block; color: var(--forest-deep); font-family: var(--font-head); font-weight: 600; }
+ 
+.quote-card{
+  background: var(--forest);
+  color: var(--white);
+  padding: 32px;
+  border-radius: 6px;
+}
+ 
+.quote-card p{
+  color: rgba(251,250,245,.9);
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-style: italic;
+  max-width: none;
+}
+ 
+.quote-card cite{ display: block; margin-top: 14px; font-style: normal; color: var(--gold-soft); font-size: .88rem; }
+ 
+/* ---------- Program studi (cards) ---------- */
+.prodi-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+ 
+.prodi-card{
+  background: var(--paper);
+  padding: 28px 24px;
+}
+ 
+.prodi-card .kode{
+  font-family: var(--font-head);
+  font-style: italic;
+  color: var(--teal);
+  font-size: .88rem;
+}
+ 
+.prodi-card h3{ margin: 10px 0 8px; }
+.prodi-card p{ font-size: .92rem; margin: 0; }
+ 
+/* ---------- Tabel Fakultas ---------- */
+table.faculty-table{
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+table.faculty-table caption{
+  text-align: left;
+  padding: 4px 2px 14px;
+  color: var(--ink-soft);
+  font-size: .85rem;
+}
+
+table.faculty-table th,
+table.faculty-table td{
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  font-size: .93rem;
+  vertical-align: top;
+}
+
+table.faculty-table thead th{
+  background: var(--forest-deep);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-weight: 500;
+}
+
+table.faculty-table tbody tr:nth-child(even){ background: var(--paper-dim); }
+table.faculty-table tbody tr:last-child td{ border-bottom: none; }
+
+table.faculty-table td.kode{
+  font-family: var(--font-head);
+  font-style: italic;
+  color: var(--teal);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px){
+  table.faculty-table{ display: block; overflow-x: auto; }
+}
+ 
+/* ---------- Berita preview cards ---------- */
+.berita-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 28px;
+}
+ 
+article.berita-card{
+  border: 1px solid var(--line);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+ 
+article.berita-card .thumb{ aspect-ratio: 16/10; background: var(--forest-mid); }
+ 
+.berita-card .body{ padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+ 
+.berita-card time{ font-size: .78rem; color: var(--teal); font-weight: 600; letter-spacing: .02em; }
+ 
+.berita-card h3{ font-size: 1.08rem; }
+.berita-card p{ font-size: .93rem; margin: 0; }
+ 
+.berita-card .read-more{ margin-top: auto; font-weight: 600; font-size: .88rem; color: var(--forest); }
+ 
+/* ---------- Layout with aside ---------- */
+.content-grid{
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: start;
+}
+ 
+aside.side{
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 26px;
+}
+ 
+aside.side + aside.side{ margin-top: 24px; }
+ 
+.side h4{
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gold);
+}
+ 
+.side ul{ display: grid; gap: 12px; }
+ 
+.side .cat-link{
+  display: flex;
+  justify-content: space-between;
+  font-size: .92rem;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.side .cat-link:last-child{ border-bottom: none; }
+.side .cat-link span.count{ color: var(--teal); font-weight: 600; }
+ 
+.side .agenda-item{ padding: 10px 0; border-bottom: 1px solid var(--line); }
+.side .agenda-item:last-child{ border-bottom: none; }
+.side .agenda-item h5{ margin-bottom: 3px; }
+.side .agenda-item p{ margin: 0; font-size: .85rem; }
+ 
+table.mini-table{ width: 100%; border-collapse: collapse; font-size: .86rem; }
+table.mini-table th, table.mini-table td{ padding: 8px 6px; text-align: left; border-bottom: 1px solid var(--line); }
+table.mini-table th{ color: var(--forest-deep); font-family: var(--font-head); font-weight: 600; }
+ 
+/* ---------- Article page (berita.html) ---------- */
+.page-hero{
+  background: var(--forest-deep);
+  color: var(--white);
+  padding: 56px 0 44px;
+}
+.page-hero .kicker{ color: var(--gold-soft); font-family: var(--font-head); font-style: italic; }
+.page-hero h1{ color: var(--white); margin-top: 8px; }
+.page-hero p{ color: rgba(251,250,245,.8); margin-top: 12px; }
+ 
+.news-list{ display: grid; gap: 36px; }
+ 
+article.news-full{
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 36px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 26px;
+}
+ 
+article.news-full:last-child{ border-bottom: none; }
+ 
+article.news-full .thumb{
+  aspect-ratio: 4/3;
+  background: var(--forest-mid);
+  border-radius: 4px;
+}
+ 
+article.news-full header .meta{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+ 
+article.news-full header .meta .tag{
+  background: var(--gold-soft);
+  color: var(--forest-deep);
+  padding: 2px 9px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: .72rem;
+}
+ 
+article.news-full h2{ margin-bottom: 10px; }
+article.news-full h2 a:hover{ color: var(--forest); }
+ 
+article.news-full footer{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+  font-size: .82rem;
+}
+ 
+article.news-full footer h6{ margin: 0; }
+ 
+article.news-full footer ul{ display: flex; gap: 8px; }
+article.news-full footer li{
+  background: var(--paper-dim);
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: var(--ink-soft);
+}
+ 
+.featured-article{
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 32px;
+  margin-bottom: 40px;
+}
+.featured-article .thumb{ aspect-ratio: 21/9; background: var(--forest-mid); margin-bottom: 22px; border-radius: 4px;}
+.featured-article h2{ font-size: 1.9rem; }
+.featured-article .lede{ font-size: 1.05rem; }
+ 
+/* ---------- Footer ---------- */
+.site-footer{
+  background: var(--forest-deep);
+  color: rgba(251,250,245,.78);
+  padding: 60px 0 28px;
+}
+ 
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+  gap: 40px;
+}
+ 
+.footer-grid h5{
+  color: var(--gold-soft);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+ 
+.footer-grid p{ color: rgba(251,250,245,.7); font-size: .9rem; }
+ 
+.footer-grid ul{ display: grid; gap: 10px; }
+.footer-grid a{ font-size: .9rem; color: rgba(251,250,245,.78); }
+.footer-grid a:hover{ color: var(--white); }
+ 
+.footer-bottom{
+  max-width: var(--max);
+  margin: 44px auto 0;
+  padding: 22px 32px 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: .82rem;
+  color: rgba(251,250,245,.55);
+}
+ 
+/* ---------- Responsive ---------- */
+@media (max-width: 980px){
+  .hero .wrap{ grid-template-columns: 1fr; padding-top: 44px; }
+  .hero-art{ order: -1; max-width: 340px; }
+  .tentang-grid, .stat-wrap{ grid-template-columns: 1fr; }
+  .prodi-grid{ grid-template-columns: repeat(2, 1fr); }
+  .berita-grid{ grid-template-columns: 1fr; }
+  .content-grid{ grid-template-columns: 1fr; }
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+  article.news-full{ grid-template-columns: 1fr; }
+  article.news-full .thumb{ aspect-ratio: 16/9; }
+}
+ 
+@media (max-width: 720px){
+  .main-nav{
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--forest-deep);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    display: none;
+  }
+  .main-nav.open{ display: block; }
+  .main-nav ul{ flex-direction: column; align-items: stretch; padding: 8px 24px 18px; gap: 2px; }
+  .main-nav a{ padding: 12px 8px; }
+  .nav-toggle{ display: block; }
+  .prodi-grid{ grid-template-columns: 1fr; }
+  .footer-grid{ grid-template-columns: 1fr; }
+  .footer-bottom{ flex-direction: column; }
+}
+ 
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  .btn{ transition: none; }
+}
+</style>
+</head>
+<body>
+ 
+<a class="skip-link" href="#konten-utama"></a>
+ 
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <img src="Image/LOGO_ITERA_TERBARU.png" alt="Logo ITERA" class="logo-mark" aria-hidden="true">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-text">
+        <span class="name">ITERA</span>
+        <span class="sub">Institut Teknologi Sumatera</span>
+      </span>
+    </a>
+ 
+    <!-- ================= NAVIGASI ================= -->
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <ul>
+        <li><a href="index.html" aria-current="page">Beranda</a></li>
+        <li><a href="berita.html">Berita</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+ 
+<!-- ================= MAIN CONTENT ================= -->
+<main id="konten-utama">
+ 
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <p class="hero-eyebrow">Lampung Selatan, Sumatera</p>
+        <h1 id="hero-title">FROM SUMATERA FOR INDONESIA</h1>
+        
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="index.html#fakultas">Jelajahi Fakultas</a>
+          <a class="btn btn-ghost" href="berita.html">Baca Berita Kampus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Tentang -->
+  <section id="tentang" aria-labelledby="tentang-title">
+    <div class="wrap about-grid">
+      <div>
+        <div class="section-head">
+          <h2 id="tentang-title">Tentang ITERA</h2>
+        </div>
+        <p>Institut Teknologi Sumatera didirikan pada 6 Oktober 2014 untuk menghadirkan pendidikan tinggi teknik berkualitas di Pulau Sumatera. Kampus berada di Lampung Selatan,Luas ITERA sendiri sekitar 285 hektar. Perguruan tinggi negeri yang lahir dari kebutuhan pemerataan pendidikan teknik di luar Pulau Jawa. ITERA sendiri memiliki 3 Fakultas yaitu ada Fakultas Teknik Industri(FTI),Fakultas Sains(FS) dan Fakultas Teknologi Infrastruktur dan Kewilayahan(FTIK) dan ITERA meiliki 40+ prodi.</p>
+ 
+        <h3>Visi Institusi</h3>
+        <p>Menjadi perguruan tinggi yang unggul, bermartabat, mandiri, dan diakui dunia, serta memandu perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan sekitarnya.</p>
+        
+          <h3>Misi Institusi</h3>
+        <p>Berkonstribusi pada pemberdayaan potensi yang ada di wilayah Sumatera khususnya, dan Indonesia serta dunia melalui keunggulan dalam pendidikan, penelitian, dan pengabdian pada masyarakat dalam bidang ilmu pengetahuan, teknologi, seni, dan ilmu kemanusiaan.</p>
+      </div>
+ 
+      <ul class="fact-list" aria-label="Fakta singkat kampus">
+        <li><span class="k">Lokasi : </span><span class="v">Way Hui, Lampung Selatan</span></li>
+        <li><span class="k">Status : </span><span class="v">Perguruan Tinggi Negeri</span></li>
+      </ul>
+    </div>
+  </section>
+ 
+  <!-- Fakultas -->
+  <section id="fakultas" aria-labelledby="fakultas-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="fakultas-title">Fakultas</h2>
+        <p>Tiga fakultas menaungi rumpun ilmu teknologi, sains, dan perencanaan.</p>
+      </div>
+      
+  <table class="faculty-table">
+    <caption>Daftar fakultas dan program studi di ITERA</caption>
+    <thead>
+      <tr>
+        <th scope="col">Kode</th>
+        <th scope="col">Fakultas</th>
+        <th scope="col">Program Studi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="kode">FTI</td>
+        <td>Fakultas Teknologi Industri</td>
+        <td>Teknik Informatika, Teknik Kimia, Teknologi Pangan, Teknik Mesin, Teknologi Industri Pertanian, Teknik Biosistem, Geologi, Geofisika, Teknik Pertambangan, Teknik Industri, Teknik Elektro, Teknik Sistem Energi, Teknik Telekomunikasi, Rekayasa Kosmetik, Teknik Instrumentasi dan Otomasi, dan Teknik Material.</td>
+      </tr>
+      <tr>
+        <td class="kode">FTIK</td>
+        <td>Fakultas Teknologi Infrastruktur dan Kewilayahan</td>
+        <td>Arsitektur, Arsitektur Lanskap, Desain Komunikasi Visual, Pariwisata, Perencanaan Wilayah dan Kota, Rekayasa Tata Kelola Air, Teknik Geomatika, Teknik Kelautan, Teknik Lingkungan, Teknik Perkeretaapian, dan Teknik Sipil.</td>
+      </tr>
+      <tr>
+        <td class="kode">FS</td>
+        <td>Fakultas Sains</td>
+        <td>Matematika, Fisika, Kimia, Biologi, Farmasi, Sains Aktuaria, Sains Atmosfer dan Keplanetan, Sains Data, dan Sains Lingkungan Kelautan.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ </section>
+
+  <!-- Kontak -->
+  <section id="kontak" aria-labelledby="kontak-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="kontak-title">Kunjungi Kampus</h2>
+        <p>Kampus ITERA terbuka untuk kunjungan sekolah, mitra riset, dan calon mahasiswa.</p>
+      </div>
+      <ul class="fact-list" style="max-width:640px">
+        <li><span class="k">Alamat : </span><span class="v">Jl. Terusan Ryacudu, Way Hui, Kec. Jati Agung, Kabupaten Lampung Selatan, Lampung </span></li>
+      </ul>
+    </div>
+  </section>
+ 
+</main>
+ 
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="logo-text"><span class="name">ITERA</span></span>
+      <p>Institut Teknologi Sumatera — pendidikan teknik dan sains untuk pembangunan Sumatera.</p>
+    </div>
+ 
+    <nav aria-label="Tautan cepat">
+      <h2>Tautan</h2>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="berita.html">Berita</a></li>
+      </ul>
+    </nav>
+  </div>
+ 
+  <div class="footer-bottom">
+    <div class="wrap">
+      <span>© 2026 Institut Teknologi Sumatera.</span>
+      <span>Way Hui, Lampung Selatan</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

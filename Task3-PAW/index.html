@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ornamen background -->
+  <div class="bg">
+    <div class="shape bar bar-1"></div>
+    <div class="shape bar bar-2"></div>
+    <div class="shape ring ring-1"></div>
+    <div class="shape ring ring-2"></div>
+    <div class="shape pill"></div>
+    <div class="shape triangle"></div>
+  </div>
+
+  <main class="wrapper">
+
+    <section class="intro">
+      <div class="logo"><span></span><span></span></div>
+
+      <h1>Welcome!</h1>
+      <hr class="line">
+      <p>
+        Workshop Web Development 2026 terbuka untuk mahasiswa ITERA.
+        Isi formulir di samping untuk mendaftar, kuota hanya 100 peserta.
+      </p>
+      <a href="detail.html" class="btn btn-small">Lihat Pendaftar</a>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Sign <u>up</u></h2>
+
+      <form id="form-daftar" action="detail.html" method="GET">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama kamu" required>
+
+        <div class="row">
+          <div>
+            <label for="nim">NIM</label>
+            <input type="text" id="nim" name="nim" placeholder="122140001" pattern="[0-9]{9}" title="NIM 9 digit angka" required>
+          </div>
+          <div>
+            <label for="angkatan">Angkatan</label>
+            <input list="list-angkatan" id="angkatan" name="angkatan" placeholder="2023">
+            <datalist id="list-angkatan">
+              <option value="2022">
+              <option value="2023">
+              <option value="2024">
+              <option value="2025">
+            </datalist>
+          </div>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@student.itera.ac.id" required>
+
+        <label for="prodi">Program Studi</label>
+        <select id="prodi" name="prodi" required>
+          <option value="">Pilih program studi</option>
+          <option value="informatika">Teknik Informatika</option>
+          <option value="elektro">Teknik Elektro</option>
+          <option value="sains-data">Sains Data</option>
+          <option value="matematika">Matematika</option>
+        </select>
+
+        <span class="label">Jenis Kelamin</span>
+        <div class="options">
+          <label><input type="radio" name="gender" value="laki-laki" required> Laki-laki</label>
+          <label><input type="radio" name="gender" value="perempuan"> Perempuan</label>
+        </div>
+
+        <span class="label">Minat</span>
+        <div class="options">
+          <label><input type="checkbox" name="minat" value="frontend"> Frontend</label>
+          <label><input type="checkbox" name="minat" value="backend"> Backend</label>
+          <label><input type="checkbox" name="minat" value="ui-ux"> UI/UX</label>
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>

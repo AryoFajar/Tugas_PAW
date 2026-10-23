@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Pendaftar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg">
+    <div class="shape bar bar-1"></div>
+    <div class="shape bar bar-2"></div>
+    <div class="shape ring ring-1"></div>
+    <div class="shape ring ring-2"></div>
+    <div class="shape pill"></div>
+    <div class="shape triangle"></div>
+  </div>
+
+  <main class="wrapper wrapper-top">
+
+    <section class="intro">
+      <div class="logo"><span></span><span></span></div>
+
+      <h1>Hai, Budi!</h1>
+      <hr class="line">
+      <p>
+        Pendaftaran kamu sudah kami terima. Simpan nomor registrasi
+        <b>WD-2026-042</b> dan tunjukkan saat registrasi ulang di lokasi acara.
+      </p>
+      <a href="index.html" class="btn btn-small">Kembali</a>
+    </section>
+
+    <section class="card card-wide">
+      <h2 class="card-title">Detail <u>Pendaftar</u></h2>
+
+      <table class="data">
+        <tr><th>Nama</th><td>Budi Santoso</td></tr>
+        <tr><th>NIM</th><td>122140001</td></tr>
+        <tr><th>Angkatan</th><td>2022</td></tr>
+        <tr><th>Email</th><td>budi@student.itera.ac.id</td></tr>
+        <tr><th>Prodi</th><td>Teknik Informatika</td></tr>
+        <tr><th>Jenis Kelamin</th><td>Laki-laki</td></tr>
+        <tr><th>Minat</th><td>Frontend, Backend</td></tr>
+        <tr><th>Status</th><td><span class="badge">Terdaftar</span></td></tr>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- desain query string dari form pendaftaran -->
+  <section class="wrapper wrapper-bottom">
+    <div class="card card-full">
+      <h2 class="card-title small">Query String</h2>
+      <p class="note">URL yang terbentuk setelah form dikirim dengan method GET:</p>
+      <code class="url">detail.html?<b>nama</b>=Budi+Santoso&amp;<b>nim</b>=122140001&amp;<b>angkatan</b>=2022&amp;<b>email</b>=budi%40student.itera.ac.id&amp;<b>prodi</b>=informatika&amp;<b>gender</b>=laki-laki&amp;<b>minat</b>=frontend&amp;<b>minat</b>=backend</code>
+
+      <table class="qs">
+        <thead>
+          <tr><th>Name</th><th>Input</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>nama</td><td>text</td><td>Budi+Santoso</td></tr>
+          <tr><td>nim</td><td>text (pattern)</td><td>122140001</td></tr>
+          <tr><td>angkatan</td><td>datalist</td><td>2022</td></tr>
+          <tr><td>email</td><td>email</td><td>budi%40student.itera.ac.id</td></tr>
+          <tr><td>prodi</td><td>select</td><td>informatika</td></tr>
+          <tr><td>gender</td><td>radio</td><td>laki-laki</td></tr>
+          <tr><td>minat</td><td>checkbox</td><td>frontend, backend</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</body>
+</html>

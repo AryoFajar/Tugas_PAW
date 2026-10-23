@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  background: #2b0130;
+}
+
+/* ---------- ornamen background ---------- */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2b0130 0%, #3d0a45 50%, #4a1462 100%);
+}
+
+.shape {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bar {
+  width: 10px;
+  height: 160px;
+  border-radius: 10px;
+  background: #5a2a6b;
+  top: 0;
+}
+.bar-1 { left: 28%; }
+.bar-2 { left: 31%; height: 160px; }
+
+.ring {
+  border: 26px solid rgba(108, 92, 200, 0.35);
+  border-radius: 50%;
+}
+.ring-1 {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  bottom: -160px;
+}
+.ring-2 {
+  width: 220px;
+  height: 220px;
+  left: -80px;
+  top: 52%;
+  border-color: rgba(120, 60, 150, 0.35);
+}
+
+.pill {
+  width: 90px;
+  height: 380px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, rgba(120, 110, 220, 0.55), rgba(120, 110, 220, 0.1));
+  transform: rotate(45deg);
+  right: 18%;
+  top: -60px;
+}
+
+.triangle {
+  width: 520px;
+  height: 300px;
+  left: 18%;
+  bottom: 0;
+  background: rgba(40, 0, 45, 0.55);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* ---------- layout utama ---------- */
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  align-items: center;
+  gap: 60px;
+}
+
+.wrapper-top {
+  min-height: auto;
+}
+
+.wrapper-bottom {
+  min-height: auto;
+  padding-top: 0;
+  grid-template-columns: 1fr;
+}
+
+/* ---------- bagian kiri ---------- */
+.logo {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 70px;
+}
+.logo span {
+  width: 14px;
+  height: 28px;
+  background: #fff;
+}
+.logo span:last-child {
+  border-top: 8px solid #fff;
+  background: transparent;
+  border-left: 0;
+  box-shadow: inset 0 -16px 0 #fff;
+}
+
+.intro h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.line {
+  width: 44px;
+  border: none;
+  border-top: 2px solid #fff;
+  margin: 32px 0;
+}
+
+.intro p {
+  max-width: 380px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #e6d6ea;
+  margin-bottom: 36px;
+}
+
+/* ---------- tombol ---------- */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 26px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #f7893b, #e5285f);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-small {
+  width: auto;
+  margin-top: 0;
+  padding: 7px 20px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ---------- card / box kaca ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 34px 40px;
+}
+
+.card-wide { width: 440px; }
+.card-full { width: 100%; }
+
+.card-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+.card-title u {
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+.card-title.small {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+/* ---------- form ---------- */
+#form-daftar label,
+#form-daftar .label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input:not([type]),
+select {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+  transition: background 0.2s;
+}
+
+input::placeholder { color: rgba(255, 255, 255, 0.55); }
+
+input:focus,
+select:focus {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+select option { color: #333; }
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+#form-daftar .options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #e5285f;
+}
+
+/* ---------- tabel ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data th,
+.data td {
+  padding: 9px 4px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.data th {
+  width: 38%;
+  font-weight: 500;
+  color: #e0c7e6;
+}
+
+.data tr:last-child th,
+.data tr:last-child td {
+  border-bottom: none;
+}
+
+.data tr:hover td {
+  color: #f7a25f;
+}
+
+.badge {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  background: linear-gradient(90deg, #f7893b, #e5285f);
+}
+
+.note {
+  font-size: 12px;
+  color: #e0c7e6;
+  margin-bottom: 12px;
+}
+
+.url {
+  display: block;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  word-break: break-all;
+}
+
+.url b { color: #f7a25f; }
+
+.qs thead tr {
+  background: linear-gradient(90deg, #f7893b, #e5285f);
+}
+
+.qs th,
+.qs td {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.qs tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.qs tbody tr:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.qs td:first-child {
+  font-family: Consolas, monospace;
+  color: #f7a25f;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .card-wide { width: 100%; }
+
+  .intro h1 { font-size: 46px; }
+
+  .logo { margin-bottom: 40px; }
+}
