@@ -12,10 +12,11 @@ Halaman web sederhana untuk pendaftaran **Workshop Web Development 2026**. Websi
 
 ```
 task_3/
-├── detail.html                                 # halaman detail pendaftar (dummy)
 ├── index.html                                  # halaman pendaftaran (form GET)
+├── detail.html                                 # halaman detail pendaftar (dummy)
 ├── style.css                                   # desain kedua halaman
-├── Task3-PAW.pdf
+├── screenshots/                                # tangkapan layar hasil
+├── RA-Aryo Fajar Pratomo-124140012-Tugas3-Pemweb.pdf
 └── README.md
 ```
 
@@ -49,6 +50,24 @@ Elemen form yang digunakan:
 
 ### 2. Halaman Detail Pendaftar (`detail.html`)
 Berisi data pendaftar **dummy** yang ditulis langsung di HTML dalam bentuk tabel. Halaman ini tidak menangkap data dari form.
+
+## Screenshot
+
+**Halaman Pendaftaran**
+
+![Halaman Pendaftaran](screenshots/01-halaman-pendaftaran.png)
+
+**Form Setelah Diisi**
+
+![Form Diisi](screenshots/02-form-diisi.png)
+
+**Halaman Detail (query string terlihat di address bar)**
+
+![Halaman Detail](screenshots/03-halaman-detail.png)
+
+**Tampilan Mobile**
+
+<img src="screenshots/04-tampilan-mobile.png" width="300" alt="Tampilan Mobile">
 
 ## Desain Query String
 
