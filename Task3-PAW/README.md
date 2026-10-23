@@ -79,14 +79,13 @@ detail.html?nama=Budi+Santoso&nim=122140001&angkatan=2022&email=budi%40student.i
 
 | Key | Value | Keterangan |
 |---|---|---|
-| `nama` | `Budi+Santoso` | spasi menjadi `+` |
-| `nim` | `122140001` | 9 digit angka |
-| `angkatan` | `2022` | dari datalist |
-| `email` | `budi%40student.itera.ac.id` | `@` menjadi `%40` |
+| `nama` | `Aryo+Fajar+Pratomo` | spasi menjadi `+` |
+| `nim` | `124140012` | 9 digit angka |
+| `angkatan` | `2024` | dari datalist |
+| `email` | `aryo%40student.itera.ac.id` | `@` menjadi `%40` |
 | `prodi` | `informatika` | nilai dari atribut `value` option |
 | `gender` | `laki-laki` | hanya satu nilai |
-| `minat` | `frontend`, `backend` | key muncul berulang untuk checkbox |
-
+| `minat` | `frontend`, `UI/UX` | 
 ## Selector CSS
 
 | Jenis | Contoh |
