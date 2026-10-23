@@ -55,15 +55,15 @@ Berisi data pendaftar **dummy** yang ditulis langsung di HTML dalam bentuk tabel
 
 **Halaman Pendaftaran**
 
-![Halaman Pendaftaran](screenshots/01-halaman-pendaftaran.png)
+![Halaman Pendaftaran](01-halaman-pendaftaran.png)
 
 **Form Setelah Diisi**
 
-![Form Diisi](screenshots/02-form-diisi.png)
+![Form Diisi](02-form-diisi.png)
 
 **Halaman Detail (query string terlihat di address bar)**
 
-![Halaman Detail](screenshots/03-halaman-detail.png)
+![Halaman Detail](03-halaman-detail.png)
 
 **Tampilan Mobile**
 
