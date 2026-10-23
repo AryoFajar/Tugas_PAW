@@ -12,10 +12,10 @@ Halaman web sederhana untuk pendaftaran **Workshop Web Development 2026**. Websi
 
 ```
 task_3/
-├── index.html                                  # halaman pendaftaran (form GET)
 ├── detail.html                                 # halaman detail pendaftar (dummy)
+├── index.html                                  # halaman pendaftaran (form GET)
 ├── style.css                                   # desain kedua halaman
-├── RA-Aryo Fajar Pratomo-124140012-Tugas3-Pemweb.pdf
+├── Task3-PAW.pdf
 └── README.md
 ```
 
